@@ -99,7 +99,7 @@ ___
 **Note: the routes below need a user token to work**
 * Create post [/posts/] - POST<br/>
 ``http://localhost:3003/api/posts``<br/>
-The resquest data required are email and password.<br/>
+The resquest data required are title and text.<br/>
 **Require a valid user token, make user login get it**<br/>
 eg.: 
 ~~~js
