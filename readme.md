@@ -76,8 +76,8 @@ e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701``<br/>
 
 return a success message
 ___
-* User **Login** [user/login] - POST
-The resquest data required are mail and password.
+* User **Login** [user/login] - POST <br/>
+The resquest data required are mail and password. <br/>
 eg.: 
 ~~~js
 {
@@ -90,17 +90,17 @@ return user data (name, mail and session token)
 
 #### Posts endpoints
 
-*  List post [/posts] - GET
-``http://localhost:3003/api/posts``
+*  List post [/posts] - GET <br/>
+``http://localhost:3003/api/posts``<br/>
 
-return an array with posts registed
+return an array with posts registred
 ___
 
-**Note: the routes belows needs a user token to works**
-* Create post [/posts/] - POST
-``http://localhost:3003/api/posts``
-The resquest data required are email and password.
-**Require a valid user token, meke user login get it**
+**Note: the routes below need a user token to work**
+* Create post [/posts/] - POST<br/>
+``http://localhost:3003/api/posts``<br/>
+The resquest data required are email and password.<br/>
+**Require a valid user token, make user login get it**<br/>
 eg.: 
 ~~~js
 {
@@ -110,19 +110,27 @@ eg.:
 ~~~
 return a created post
 ___
-*  List a single post by ID [/post/:postID] - GET
-    * The resquest data required are email and password.
-**id** is the posts id inside database
-``http://localhost:3003/api/posts/:postid``
-e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701``
-**Require a valid user token, meke user login get it**
-return the post which the id belongs to
+*  List a single post by ID [/posts/:postID] - GET<br/>
+**id** is the posts id inside database<br/>
+``http://localhost:3003/api/posts/:postid``<br/>
+e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701``<br/>
+**Require a valid user token, make user login get it** <br/>
+return the post which the id belongs to<br/>
 ___
-* Update posts by ID [/posts/:id] - PUT
-**id** is the post id inside database
-``http://localhost:3003/api/posts/:id``
-e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701``
-**Require a valid user token, meke user login get it**
+* Update posts by ID [/posts/:id] - PUT<br/>
+**id** is the post id inside database <br/>
+``http://localhost:3003/api/posts/:id``<br/>
+e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701``<br/>
+**Require a valid user token, make user login get it**<br/>
+
+The resquest data required are email and password.<br/>
+eg.: 
+~~~js
+{
+    "title":"Post title",
+    "text": "Post content comes here!"
+}
+~~~
  
  return the post updated
 ___
@@ -130,7 +138,7 @@ ___
 **id** is the post id inside database <br/>
 ``http://localhost:3003/api/posts/:id`` <br/>
 e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701`` <br/>
-**Require a valid user token, meke user login get it**
+**Require a valid user token, make user login get it**
 
 return a ssuccess message
 
