@@ -11,9 +11,9 @@ const router = express.Router()
 const Post = require('../models/Post')
 const authMiddleware = require('../middlewares/auth')
 
-router.use(authMiddleware)
 /**
  * Func to show all posts
+ * Dont need be authed
  */
 router.get('/', async (req, res) => {
     try {
@@ -23,6 +23,12 @@ router.get('/', async (req, res) => {
         return res.status(400).send({mensagem : `error when try to list posts:${err}` })
     }
 })
+
+/**
+ * Using auth midleware
+ * the routes belows need the user valid token to works
+ */
+router.use(authMiddleware)
 /**
  * Func to show a post
  */
@@ -37,7 +43,7 @@ router.get('/:postId', async (req, res) => {
 /**
  * Func to create a new post
  */
-router.post('/', authMiddleware, async (req, res) => {
+router.post('/', async (req, res) => {
     const {title} = req.body
     try {
         if( await Post.findOne({title}) )return res.status(400).send({mensagem: 'non-existent pos'})
