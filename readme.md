@@ -74,6 +74,16 @@ ___
 ``http://localhost:3003/api/user/:id`` <br/>
 e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701``<br/>
 
+The resquest data required are name or email or password. <br/>
+eg.: 
+~~~js
+{
+	"name":"Jimi John",
+	"mail": "jimi@email.com",
+	"password":"123456"
+}
+~~~
+
 return a success message
 ___
 * User **Login** [user/login] - POST <br/>
@@ -100,7 +110,7 @@ ___
 * Create post [/posts/] - POST<br/>
 ``http://localhost:3003/api/posts``<br/>
 The resquest data required are title and text.<br/>
-**Require a valid user token, make user login get it**<br/>
+**Require a valid user token, execute user login to get it**<br/>
 eg.: 
 ~~~js
 {
@@ -110,25 +120,25 @@ eg.:
 ~~~
 return a created post
 ___
-*  List a single post by ID [/posts/:postID] - GET<br/>
+*  List a single post by ID [/posts/:postid] - GET<br/>
 **id** is the posts id inside database<br/>
 ``http://localhost:3003/api/posts/:postid``<br/>
 e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701``<br/>
-**Require a valid user token, make user login get it** <br/>
+**Require a valid user token, execute user login to get it** <br/>
 return the post which the id belongs to<br/>
 ___
 * Update posts by ID [/posts/:id] - PUT<br/>
 **id** is the post id inside database <br/>
 ``http://localhost:3003/api/posts/:id``<br/>
 e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701``<br/>
-**Require a valid user token, make user login get it**<br/>
+**Require a valid user token, execute user login to get it**<br/>
 
-The resquest data required are email and password.<br/>
+The resquest data required are title or text.<br/>
 eg.: 
 ~~~js
 {
-    "title":"Post title",
-    "text": "Post content comes here!"
+    "title":"New post title",
+    "text": "New post content comes here!"
 }
 ~~~
  
@@ -138,7 +148,7 @@ ___
 **id** is the post id inside database <br/>
 ``http://localhost:3003/api/posts/:id`` <br/>
 e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701`` <br/>
-**Require a valid user token, make user login get it**
+**Require a valid user token, execute user login to get it**
 
 return a ssuccess message
 
