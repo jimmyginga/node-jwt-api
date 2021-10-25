@@ -14,7 +14,7 @@ This project was made using node 14.17.0, please check the node version in case 
 To download and install mongodb go to [MongoDB Download](https://www.mongodb.com/try/download/community`) docs and follow the stepps.
 
 ### Downloading the project
-Open your terminal in the some folder for project and type:
+Open your terminal in some folder for project and type:
 ~~~bash
 git clone https://github.com/jimmyginga/node-jwt-api.git .
 ~~~
@@ -37,14 +37,14 @@ The API base URL for locall machine is http://localhost:3003/api
 #### User endpoints
 
 *  List user [/user] - GET
-``http://localhost:3003/api/user``
+``http://localhost:3003/api/user`` <br/>
 
-return a array with users registed
+return an array with users registed
 ___
 
-* Create user [/user/register] - POST
-``http://localhost:3003/api/user``
-The resquest data required are email and password.
+* Create user [/user/register] - POST <br/>
+``http://localhost:3003/api/user`` <br/>
+The resquest data required are name, email and password.
 eg.: 
 ~~~js
 {
@@ -53,29 +53,28 @@ eg.:
 	"password":"123456"
 }
 ~~~
-return a user created
+return an user created
 ___
-* List a single user by ID [/user/:id] - GET
-    * The resquest data required are email and password.
-id is the user id inside database
+* List a single user by ID [/user/:id] - GET <br/>
+**id** is the user id inside database
 ``http://localhost:3003/api/user/:id``
-e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701``
+e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701`` <br/>
 
 return the user which the id belongs to
 ___
-* Update user by ID [/user/:id] - PUT
-id is the user id inside database
-``http://localhost:3003/api/user/:id``
-e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701``
+* Update user by ID [/user/:id] - PUT <br/>
+**id** is the user id inside database<br/>
+``http://localhost:3003/api/user/:id`` <br/>
+e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701``<br/>
 
 return the user updated
 ___
-* Delete user by ID [/user/:id] - DELETE
-id is the user id inside database
-``http://localhost:3003/api/user/:id``
-e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701``
+* Delete user by ID [/user/:id] - DELETE <br/>
+**id** is the user id inside database
+``http://localhost:3003/api/user/:id`` <br/>
+e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701``<br/>
 
-return a success mesage
+return a success message
 ___
 * User **Login** [user/login] - POST
 The resquest data required are mail and password.
@@ -86,7 +85,7 @@ eg.:
 	"password":"123456"
 }
 ~~~
-return a user data like name, email and session token
+return user data (name, mail and session token)
 
 
 #### Posts endpoints
@@ -94,7 +93,7 @@ return a user data like name, email and session token
 *  List post [/posts] - GET
 ``http://localhost:3003/api/posts``
 
-return a array with posts registed
+return an array with posts registed
 ___
 
 **Note: the routes belows needs a user token to works**
@@ -113,25 +112,25 @@ return a created post
 ___
 *  List a single post by ID [/post/:postID] - GET
     * The resquest data required are email and password.
-id is the posts id inside database
+**id** is the posts id inside database
 ``http://localhost:3003/api/posts/:postid``
 e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701``
 **Require a valid user token, meke user login get it**
 return the post which the id belongs to
 ___
 * Update posts by ID [/posts/:id] - PUT
-id is the post id inside database
+**id** is the post id inside database
 ``http://localhost:3003/api/posts/:id``
 e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701``
 **Require a valid user token, meke user login get it**
  
  return the post updated
 ___
-* Delete post by ID [/posts/:id] - DELETE
-id is the post id inside database
-``http://localhost:3003/api/posts/:id``
-e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701``
+* Delete post by ID [/posts/:id] - DELETE <br/>
+**id** is the post id inside database <br/>
+``http://localhost:3003/api/posts/:id`` <br/>
+e.g: ``http://localhost:3003/api/posts/617434caac776ee3921ef701`` <br/>
 **Require a valid user token, meke user login get it**
 
-return a ssuccess mesage
+return a ssuccess message
 
