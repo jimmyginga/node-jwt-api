@@ -39,6 +39,14 @@ UserSchema.pre('save', async function(next){
     this.password = hash
     next()
 })
+/**
+ * Hash password for update
+ */
+UserSchema.pre('findOneAndUpdate', async function(next){
+    const hash = await bcrypt.hash(this._update.password, 10)
+    this._update.password = hash
+    next()
+})
 //Atribuindo à constante User a model com a estrutuda da UserSchema
 const User = mongoose.model('User', UserSchema)
 //Exportando o módulo, e adicionando a rota.

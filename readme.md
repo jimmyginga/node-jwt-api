@@ -8,10 +8,10 @@ First of all, you need to have node, npm and mondodb installed on your local mac
 Let's go ;-)
 
 ### Downloading and install node and npm
-To download and install go to [nodejs docs](https://nodejs.org/en/download/`) and follow the stepps.
+To download and install go to [nodejs docs](https://nodejs.org/en/download/) and follow the stepps.
 This project was made using node 14.17.0, please check the node version in case of incompatibility.
 ### Downloading and install mondogb
-To download and install mongodb go to [MongoDB Download](https://www.mongodb.com/try/download/community`) docs and follow the stepps.
+To download and install mongodb go to [MongoDB Download](https://www.mongodb.com/try/download/community) docs and follow the stepps.
 
 ### Downloading the project
 Open your terminal in some folder for project and type:
@@ -43,7 +43,7 @@ return an array with users registed
 ___
 
 * Create user [/user/register] - POST <br/>
-``http://localhost:3003/api/user`` <br/>
+``http://localhost:3003/api/user/register`` <br/>
 The resquest data required are name, email and password.
 eg.: 
 ~~~js
@@ -67,13 +67,6 @@ ___
 ``http://localhost:3003/api/user/:id`` <br/>
 e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701``<br/>
 
-return the user updated
-___
-* Delete user by ID [/user/:id] - DELETE <br/>
-**id** is the user id inside database
-``http://localhost:3003/api/user/:id`` <br/>
-e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701``<br/>
-
 The resquest data required are name or email or password. <br/>
 eg.: 
 ~~~js
@@ -84,9 +77,17 @@ eg.:
 }
 ~~~
 
+return the user updated
+___
+* Delete user by ID [/user/:id] - DELETE <br/>
+**id** is the user id inside database
+``http://localhost:3003/api/user/:id`` <br/>
+e.g: ``http://localhost:3003/api/user/617434caac776ee3921ef701``<br/>
+
 return a success message
 ___
 * User **Login** [user/login] - POST <br/>
+``http://localhost:3003/api/user/login`` <br/>
 The resquest data required are mail and password. <br/>
 eg.: 
 ~~~js
