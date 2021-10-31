@@ -61,7 +61,7 @@ router.post('/', async (req, res) => {
 router.put('/:postId', async (req, res) => {
     try {
         const post = await Post.findByIdAndUpdate(req.params.postId, {...req.body}, {new:true})
-        return res.status(400).send({post})
+        return res.status(200).send({post})
     } catch (err) {
         return res.status(400).send({mensagem : `error when try to update post: ${err}`})
     }

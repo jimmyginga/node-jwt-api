@@ -56,6 +56,17 @@ router.put('/:userId', async(req, res)=>{
     }
 })
 /**
+ * Func to delete user
+ */
+router.delete('/:userId', async (req, res) => {
+   try {
+       await User.findByIdAndRemove(req.params.userId)
+       return res.status(200).send() 
+   } catch (err) {
+        return res.status(400).send({mensagem : `error when try to delete user: ${err}`})
+   }
+})
+/**
  * Func to create user
  */
 router.post('/register', async(req, res)=>{
